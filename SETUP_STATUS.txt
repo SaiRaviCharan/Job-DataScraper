@@ -1,0 +1,142 @@
+═══════════════════════════════════════════════════════════════════════════════
+                          🎉 BACKEND IS RUNNING!
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Flask backend is now running on:
+   http://localhost:5000
+
+Test the API health:
+   http://localhost:5000/health
+
+═══════════════════════════════════════════════════════════════════════════════
+                              NEXT STEP
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 Start the React Frontend
+
+Open a NEW PowerShell window and run:
+
+    cd "S:\Job Web Scraper\frontend"
+    npm install
+    npm start
+
+This will start the React dev server on http://localhost:3000
+
+═══════════════════════════════════════════════════════════════════════════════
+                           QUICK API TEST
+═══════════════════════════════════════════════════════════════════════════════
+
+While both servers are running, test an API call:
+
+Method 1: Browser
+    Go to: http://localhost:5000/api/analysis
+    (You'll see an error because no data has been scraped yet - that's normal)
+
+Method 2: PowerShell
+    $body = @{
+        query = "python developer"
+        sources = @("remoteok", "himalayas")
+    } | ConvertTo-Json
+    
+    Invoke-WebRequest -Uri "http://localhost:5000/api/scrape" `
+        -Method POST -Body $body -ContentType "application/json"
+
+═══════════════════════════════════════════════════════════════════════════════
+                         HOW TO USE THE DASHBOARD
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Open http://localhost:3000 in your browser
+
+2. Enter a search query (e.g., "python developer")
+
+3. Click "⚡ Scrape Jobs" button
+
+4. Wait 10-30 seconds for results
+
+5. View:
+   - Total jobs found
+   - Average, min, max salaries
+   - Top 15 most demanded skills
+   - Simple text summary
+
+6. (Optional) Click "✨ AI Summary" for AI-powered insights
+   (requires Gemini API key in .env file)
+
+═══════════════════════════════════════════════════════════════════════════════
+                            CURRENT STATUS
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Backend:     Running on http://localhost:5000
+❌ Frontend:    Not started yet (next step)
+❌ Dashboard:   Will start when you run npm start
+
+Files Created:
+  ✅ .env                    - Configuration file (created)
+  ✅ .venv/                  - Virtual environment (created)
+  ✅ backend/app.py          - Flask API (ready)
+  ✅ frontend/src/App.js     - React dashboard (ready)
+  ✅ requirements.txt        - Dependencies (installed)
+
+═══════════════════════════════════════════════════════════════════════════════
+                          COMMANDS REFERENCE
+═══════════════════════════════════════════════════════════════════════════════
+
+Backend Commands:
+  # Start (in S:\Job Web Scraper)
+  .\.venv\Scripts\python -m backend.app
+
+  # Or use the helper script
+  .\run_backend.ps1
+
+Frontend Commands:
+  # Install dependencies
+  cd frontend && npm install
+
+  # Start dev server
+  npm start
+
+API Test:
+  # Test health
+  Invoke-WebRequest http://localhost:5000/health
+
+  # Scrape jobs
+  $body = @{query="python";sources=@("remoteok")} | ConvertTo-Json
+  Invoke-WebRequest -Uri "http://localhost:5000/api/scrape" `
+      -Method POST -Body $body -ContentType "application/json"
+
+═══════════════════════════════════════════════════════════════════════════════
+                          TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════════════════
+
+❓ Backend won't start?
+   → Make sure you're in: S:\Job Web Scraper
+   → Run: .\.venv\Scripts\python -m backend.app
+
+❓ Frontend won't start?
+   → Install Node.js: https://nodejs.org/
+   → Run: npm install (in frontend folder)
+   → Then: npm start
+
+❓ Port 5000 already in use?
+   → Another app is using port 5000
+   → Kill the process or use a different port
+
+❓ Can't connect to backend from frontend?
+   → Make sure both servers are running
+   → Check firewall settings
+   → Verify CORS is enabled (it is in app.py)
+
+═══════════════════════════════════════════════════════════════════════════════
+                            WHAT'S WORKING
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Python environment setup
+✅ All dependencies installed
+✅ Flask backend running
+✅ API health check working
+✅ Sample data included
+✅ Configuration files created
+
+Ready to go! 🚀
+
+═══════════════════════════════════════════════════════════════════════════════

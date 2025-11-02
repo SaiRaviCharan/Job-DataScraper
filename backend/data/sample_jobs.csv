@@ -1,0 +1,4 @@
+title,company,location,salary,skills,description,date_posted,source,url
+Data Scientist,Acme Analytics,Remote,120000,"Python, SQL, Machine Learning, Pandas","Work on ML models and data pipelines.",2025-10-15,sample,https://example.com/job/1
+Machine Learning Engineer,DataWorks,New York,140000,"Python, TensorFlow, SQL, Docker","Productionize ML models.",2025-10-20,sample,https://example.com/job/2
+Junior Data Analyst,Insight Co,Boston,80000,"SQL, Excel, Tableau","Analyze datasets and build dashboards.",2025-09-30,sample,https://example.com/job/3

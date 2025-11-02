@@ -1,0 +1,12 @@
+flask
+flask-cors
+pandas
+requests
+beautifulsoup4
+numpy
+matplotlib
+python-dotenv
+gunicorn
+
+# Optional: for AI-powered summaries via Google Gemini
+google-generativeai
